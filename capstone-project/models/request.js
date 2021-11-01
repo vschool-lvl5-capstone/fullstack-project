@@ -4,24 +4,29 @@ const Schema = mongoose.Schema
 const requestTravelSchema = new Schema ({
   arline: {
     type: String,
-    require: true
+    required: true
   },
   departureLocation: {
     type: String, 
-    require: true
+    required: true
   },
   arrivalLocation: {
     type: String, 
-    require: true
+    required: true
   },
   dateDeparture: {
     type: Date,
-    require: true
+    required: true
   },
   dateArrival: {
     type: Date,
-    require: true
-  }
+    required: true
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+  } 
 })
 
 module.exports = mongoose.model("RequestTravel", requestTravelSchema)

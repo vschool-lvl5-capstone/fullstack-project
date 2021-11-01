@@ -14,7 +14,7 @@ userRouter.route("/")
   })
 
   .post((req, res, next) => {
-    const newUser = new user(re.body)
+    const newUser = new user(req.body)
     newUser.save((err, newUsers) => {
       if(err) {
         res.status(500)
