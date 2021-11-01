@@ -4,16 +4,21 @@ const Schema = mongoose.Schema
 const destinationSchema = new Schema ({
   countryLocation: {
     type: String,
-    require: true
+    required: true
   },
-  tickePrice: {
+  ticketPrice: {
     type: Number,
-    require: true
+    required: true
   },
   yearTravelled: {
     type: Number,
-    require: true
-  }
+    required: true
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+  } 
 })
 
 module.exports = mongoose.model("Destinations", destinationSchema)
