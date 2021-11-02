@@ -12,14 +12,26 @@ requestRouter.route("/")
       return res.status(200).send(travelRequested)
     })
   })
+  // .post((req, res, next) => {
+  //   const newTravel = new requestTravel(req.body)
+  //   newTravel.save((err, newRequest) => {
+  //     if(err) {
+  //       res.status(500)
+  //       return next(err)
+  //     }
+  //     return res.status(200).send(newRequest)
+  //   })
+  // })
+  requestRouter.route("/:userId")
   .post((req, res, next) => {
-    const newTravel = new requestTravel(req.body)
-    newTravel.save((err, newRequest) => {
+    req.body.user = req.params.userId
+    const newRequest = new requestTravel(req.body)
+    newRequest.save((err, newSpot) => {
       if(err) {
-        res.status(500)
+        res.status(err)
         return next(err)
       }
-      return res.status(200).send(newRequest)
+      return res.status(201).send(newSpot)
     })
   })
 

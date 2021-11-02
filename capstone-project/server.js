@@ -18,7 +18,6 @@ mongoose.connect("mongodb://localhost:27017/travelagencydb",
 () => console.log("Connected to the Travel Agency DB")
 )
 //routes
-
 app.use("/travelagency/destinations", require("./routes/destinationRouter"))
 app.use("/travelagency/request", require("./routes/requestRouter"))
 //error catching
