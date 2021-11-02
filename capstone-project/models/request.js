@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const requestTravelSchema = new Schema ({
-  arline: {
+  airline: {
     type: String,
     require: true
   },
