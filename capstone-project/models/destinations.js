@@ -6,7 +6,7 @@ const destinationSchema = new Schema ({
     type: String,
     require: true
   },
-  tickePrice: {
+  ticketPrice: {
     type: Number,
     require: true
   },
