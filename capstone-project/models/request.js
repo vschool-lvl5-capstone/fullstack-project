@@ -15,18 +15,17 @@ const requestTravelSchema = new Schema ({
     required: true
   },
   dateDeparture: {
-    type: Date,
+    type: String,
     required: true
   },
   dateArrival: {
-    type: Date,
+    type: String,
     required: true
   },
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+  status: {
+    type: String,
     required: true
-  } 
+  }
 })
 
 module.exports = mongoose.model("RequestTravel", requestTravelSchema)

@@ -53,6 +53,7 @@ export default function Destinations(props) {
       <button className="submitBtn">Submit your previous destination</button>
      </form>
      <div className="destinationList">
+     <h1><u>Places you've been:</u></h1>
       {destinations.map(spot => {
         return (
           <ul key={spot._id}>
@@ -61,7 +62,7 @@ export default function Destinations(props) {
               <h2>Ticket price: ${parseInt(`${spot.ticketPrice}`)}</h2>
               <h3>Year you went: {spot.yearTravelled}</h3>
             </li>
-            <button onClick={() => deleteDes(spot._id)}>Delete</button>
+            <button onClick={() => deleteDes(spot._id)} className="deleteBtn">Delete</button>
           </ul>
         )
       })}
