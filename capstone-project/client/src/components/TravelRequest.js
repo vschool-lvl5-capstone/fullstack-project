@@ -48,7 +48,7 @@ export default function TravelRequest(props) {
         name="dateDeparture"
         value={inputs.dateDeparture}
         onChange={handleChange}
-
+        style={{marginLeft: "45px"}}
         ></input>
         <br/>
         <label>Where you going?</label>
@@ -57,7 +57,7 @@ export default function TravelRequest(props) {
         name="arrivalLocation"
         value={inputs.arrivalLocation}
         onChange={handleChange}
-
+        style={{marginLeft: "128px"}}
         ></input>
         <br/>
         <label>When you coming back?</label>
@@ -66,25 +66,28 @@ export default function TravelRequest(props) {
         name="dateArrival"
         value={inputs.dateArrival}
         onChange={handleChange}
-
+        style={{marginLeft: "85px"}}        
         ></input>
         <br/>
       <button className="submitBtn">Request Travel</button>
       </form>
-      <h1><u>Pending Requests:</u></h1>
-      {requestList.map(req => {
-        return (
-          <ul key={req._id}>
-            <li>
-              <h2>Airline: {req.airline}</h2>
-              <h3>From: {req.departureLocation} To: {req.arrivalLocation}</h3>
-              <h3>Date: {req.dateDeparture} - {req.dateArrival}</h3>
-              <h3>Status: {req.status}</h3>
-              <button className="deleteBtn" onClick={() => deleteRequest(req._id)}>Delete request</button>
-            </li>
-          </ul>
-        )
-      })}
+      <h1 style={{textAlign: "center"}}><u>Pending Requests:</u></h1>
+      <div style={{display: "grid", gridTemplateColumns: "1fr 1fr", textAlign: "center"}}>
+        {requestList.map(req => {
+          return (
+            <ul key={req._id}>
+              <li>
+                <h2>Airline: {req.airline}</h2>
+                <h3>From: {req.departureLocation} To: {req.arrivalLocation}</h3>
+                <h3>Date: {req.dateDeparture} - {req.dateArrival}</h3>
+                <h3>Status: {req.status}</h3>
+                <button className="deleteBtn" onClick={() => deleteRequest(req._id)}>Delete request</button>
+              </li>
+            </ul>
+          )
+        })}
+
+      </div>
     </div>
   )
 }

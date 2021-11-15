@@ -12,8 +12,6 @@ export default function App() {
   const [destination, setDestinations] = useState([])
   const [request, setRequest] = useState([])
   const [weather, setWeather] = useState({})
-  //console.log('request: ', request);
-
   //requests
   const getRequest = () => {
     axois.get("/travelagency/request")
@@ -66,6 +64,7 @@ export default function App() {
   //weather request
   const getWeather = (city) => {
     axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=3215e39c50c6e69edf517933f5e17a88`)
+    //axios.get(`http://pro.openweathermap.org/data/2.5/forecast/hourly?q=${city}&appid=3215e39c50c6e69edf517933f5e17a88`)
       .then(res => {
         console.log(res.data)
         setWeather(res.data)

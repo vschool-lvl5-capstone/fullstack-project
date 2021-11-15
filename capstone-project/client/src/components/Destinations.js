@@ -25,6 +25,7 @@ export default function Destinations(props) {
      <h1 style={{color: "#33312e"}}>Tell us where you've been...</h1>
       <label htmlFor="countryLocation"> Tell us where you went</label>
       <input
+      style={{marginLeft: "49px"}}
       name = "countryLocation"
       value = {inputs.countryLocation}
       placeholder = "....country?"
@@ -43,6 +44,7 @@ export default function Destinations(props) {
       <br/>
       <label htmlFor="yearTravelled">What year did you go in?</label>
       <input
+      style={{marginLeft: "36px"}}
       name = "yearTravelled"
       value = {inputs.yearTravelled}
       placeholder = "what year did you travel in?"
@@ -52,11 +54,11 @@ export default function Destinations(props) {
       <br/>
       <button className="submitBtn">Submit your previous destination</button>
      </form>
-     <div className="destinationList">
-     <h1><u>Places you've been:</u></h1>
+     <h1 style={{textAlign: "center"}}><u>Places you've been:</u></h1>
+     <div className="destinationList" style={{display: "grid", gridTemplateColumns: "1fr 1fr", textAlign: "center"}}>
       {destinations.map(spot => {
         return (
-          <ul key={spot._id}>
+          <ul key={spot._id} >
             <li>
               <h1>Country visited: {spot.countryLocation}</h1>
               <h2>Ticket price: ${parseInt(`${spot.ticketPrice}`)}</h2>
