@@ -78,10 +78,10 @@ export default function App() {
   return (
     <div  >
     <ul className="navbar" >
-      <li className="navbaroptions" style={{fontSize: "30px"}}><Link to="/">Home</Link></li>
-      <li className="navbaroptions" style={{fontSize: "30px"}}><Link to="/request-travel">Request Travel</Link></li>
-      <li className="navbaroptions" style={{fontSize: "30px"}}><Link to="/destinations">Destinations</Link></li>
-      <li className="navbaroptions" style={{fontSize: "30px"}}><Link to="/weather">Weather</Link></li>
+      <li className="navbaroptions" ><Link to="/">Home</Link></li>
+      <li className="navbaroptions" ><Link to="/request-travel">Request Travel</Link></li>
+      <li className="navbaroptions" ><Link to="/destinations">Destinations</Link></li>
+      <li className="navbaroptions" ><Link to="/weather">Weather</Link></li>
     </ul>
     <Switch>
       <Route exact path="/">

@@ -13,9 +13,13 @@ body {
 }
 .navbaroptions {
   margin: 0px 25px;
+  font-size: 30px;
 }
 .home {
   text-align: center;
+}
+.introP {
+  font-size: 25px;
 }
 .destinationForm {
   text-align: center;
@@ -32,7 +36,7 @@ body {
   margin: 0 auto;
 }
 select {
-  width: 15%;
+  width: 25%;
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -168,11 +172,22 @@ button {
     padding: 16px 32px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   body {
     background-image: url('./media/clouds.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-size: inherit;
+    
   }
-
+  .navbaroptions {
+    font-size: 23px;
+  }
+  .introP {
+    font-size: 20px;
+  }
+  input {
+    width: 130px;
+  }
+  select {
+    width: 35%;
+  }
 }
